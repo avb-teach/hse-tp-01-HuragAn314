@@ -1,7 +1,7 @@
 import os, sys, shutil as s
 
 input_dir, output_dir =sys.argv[1], sys.argv[2]
-mx=int(sys.argv[sys.argv.index('--max_depth')+1]) if '--max_depth' in sys.argv else None
+mx=int(sys.argv[sys.argv.index('--max_depth')]) if '--max_depth' in sys.argv else None
 os.makedirs(output_dir, exist_ok=True)
 k={}
 for d, i1, fs in os.walk(input_dir):
