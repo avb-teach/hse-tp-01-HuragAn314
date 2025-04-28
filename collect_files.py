@@ -6,7 +6,7 @@ os.makedirs(output_dir, exist_ok=True)
 k={}
 for d, i1, fs in os.walk(input_dir):
     p=os.path.relpath(d, input_dir)
-    if mx is not None and (p.count(os.sep) + 1 if p != '.' else 0)>mx: continue
+    if mx is not None and (p.count(os.sep) if p != '.' else 0)>mx: continue
     for f in fs:
         a, x= os.path.splitext(f)
         n =k.get(a, 0)
