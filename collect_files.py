@@ -5,7 +5,8 @@ mx=int(sys.argv[sys.argv.index('--max_depth')+1]) if '--max_depth' in sys.argv e
 os.makedirs(output_dir, exist_ok=True)
 k={}
 for d, i1, fs in os.walk(input_dir):
-    if mx and (p:=os.path.relpath(d, input_dir))!='.' and p.count(os.sep)>mx: continue
+    p=os.path.relpath(d, input_dir)
+    if mx is not None and (p.count(os.sep) + 1 if p != '.' else 0)>mx: continue
     for f in fs:
         a, x= os.path.splitext(f)
         n =k.get(a, 0)
