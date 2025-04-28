@@ -1,4 +1,2 @@
 #!/bin/bash
-
-dir_first=$1
-dir_second=$2
+python3 collect_files.py "$1" "$2"
